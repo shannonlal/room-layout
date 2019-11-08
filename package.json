@@ -1,0 +1,25 @@
+{
+  "name": "room-layout",
+  "version": "1.0.0",
+  "description": "React DND Room Layout builder",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shannonlal/room-layout.git"
+  },
+  "keywords": [
+    "React",
+    "DND",
+    "Room",
+    "Builder"
+  ],
+  "author": "Shannon Lal",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shannonlal/room-layout/issues"
+  },
+  "homepage": "https://github.com/shannonlal/room-layout#readme"
+}
