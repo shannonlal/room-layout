@@ -1,10 +1,12 @@
 import React from 'react';
+import Room from '../../src/components/room';
 
 export default function RoomExample() {
   // const [hideSourceOnDrag, setHideSourceOnDrag] = useState(true)
 
   return (
     <div>
+      <Room name="test" />
       <p>
         <label htmlFor="hideSourceOnDrag">
           <input id="hideSourceOnDrag" type="checkbox" />
@@ -12,5 +14,5 @@ export default function RoomExample() {
         </label>
       </p>
     </div>
-  )
+  );
 }
