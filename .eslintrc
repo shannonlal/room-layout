@@ -1,0 +1,23 @@
+{
+    "env": {
+      "browser": true,
+      "jest": true
+    },
+    "parser": "babel-eslint",
+    "extends": ["airbnb", "prettier"],
+    "plugins": ["prettier", "babel"],
+    "rules": {
+      "no-debugger": 0,
+      "jsx-a11y/no-noninteractive-element-interactions": 0,
+      "jsx-a11y/click-events-have-key-events": 0,
+      "prettier/prettier": "warn",
+      "react/jsx-one-expression-per-line": 0,
+      "react/jsx-closing-bracket-location": 0,
+      "eol-last": "off",
+      "react/jsx-indent": 0,
+      "react/jsx-indent-props": 0,
+      "import/prefer-default-export": 0,
+      "import/no-extraneous-dependencies": 0
+    }
+  }
+  
