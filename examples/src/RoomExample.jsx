@@ -1,12 +1,11 @@
 import React from 'react';
-import Room from '../../src/components/room';
+//import Room from '../';
 
 export default function RoomExample() {
   // const [hideSourceOnDrag, setHideSourceOnDrag] = useState(true)
 
   return (
     <div>
-      <Room name="test" />
       <p>
         <label htmlFor="hideSourceOnDrag">
           <input id="hideSourceOnDrag" type="checkbox" />
