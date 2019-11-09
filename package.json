@@ -4,7 +4,7 @@
   "description": "React DND Room Layout builder",
   "main": "index.js",
   "scripts": {
-    "test": "NODE_ENV=test BABEL_ENV=test  node_modules/.bin/jest --config=./jest.config.js",
+    "test": "NODE_ENV=test BABEL_ENV=test  node_modules/.bin/jest --config=./jest.config.js --env=jsdom",
     "lint": "node_modules/.bin/eslint ."
   },
   "repository": {
