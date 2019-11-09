@@ -1,5 +1,5 @@
 import React from 'react';
-// import Room from '../';
+import Room from '../../src/components/room';
 
 export default function RoomExample() {
   // const [hideSourceOnDrag, setHideSourceOnDrag] = useState(true)
