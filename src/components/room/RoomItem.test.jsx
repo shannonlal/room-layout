@@ -11,7 +11,13 @@ describe('Room Item Component Test', () => {
 
   it('should render without crashing', () => {
     const div = document.createElement('div');
-    ReactDOM.render(<RoomItem />, div);
+    const child = {};
+    ReactDOM.render(
+      <RoomItem roomId={1} roomItemId={1} left={300} top={300}>
+        {child}
+      </RoomItem>,
+      div
+    );
     ReactDOM.unmountComponentAtNode(div);
   });
 });

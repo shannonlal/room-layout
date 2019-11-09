@@ -4,9 +4,9 @@ import PropTypes from 'prop-types';
 import RoomItem, { ROOM_ITEM_TYPES } from './RoomItem';
 
 const Room = ({ name, id, items, styles, width, height, moveRoomItem, addRoomItem }) => {
-
   const [, drop] = useDrop({
     accept: [ROOM_ITEM_TYPES.ROOM_ITEM, ROOM_ITEM_TYPES.ADD_ROOM_ITEM],
+    // eslint-disable-next-line consistent-return
     drop(item, monitor) {
       if (item.type === ROOM_ITEM_TYPES.ADD_ROOM_ITEM) {
         const location = monitor.getClientOffset();
