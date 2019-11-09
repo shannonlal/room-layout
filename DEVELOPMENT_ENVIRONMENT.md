@@ -56,17 +56,24 @@ The following are the configuration files for eslint
 .eslintrc - ES Lint rules
 .prettierrc.json - Prettier JSON rules
 
-# 1. Dependency Configuration
+# 3. Linking Room Layout and Examples directory together.
+
+The following is a good Medium post on how to do this
+
+https://medium.com/@alexishevia/the-magic-behind-npm-link-d94dcb3a81af
+
+But here are the steps.  First within the room-layout directory run the following
 
 ```
-.gitignore
+npm link
 ```
-This contains a list of files that should not be checked into the git repo.
+Then within the examples directory (room-layout/examples) run the following
 
 ```
-.eslintignore
+npm link room-layout
 ```
-The following is a list of files that should be ignored when using the eslint process
+This will allow you to make changes within the room-layout project and pick them up within
+the Examples directory
 
 # 3. Build the project
 
