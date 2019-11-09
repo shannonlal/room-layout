@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import RoomItem from './RoomItem';
 
-const Room = ({ name, id, items, styles, width, height }) => (
+const Room = ({ name, id, items, styles, width, height, moveRoomItem, addRoomItem }) => (
   <div sytle={{ ...styles, width, height }}>
     {' '}
     hi {name} id {id} items {items.length}{' '}
@@ -16,6 +16,8 @@ Room.propTypes = {
   width: PropTypes.number,
   height: PropTypes.number,
   styles: PropTypes.objectOf(PropTypes.any),
+  moveRoomItem: PropTypes.func.isRequired,
+  addRoomItem: PropTypes.func.isRequired,
 };
 
 Room.defaultProps = {
