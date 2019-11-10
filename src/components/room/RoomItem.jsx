@@ -4,6 +4,7 @@ import { useDrag } from 'react-dnd';
 
 export const ROOM_ITEM_TYPES = { ROOM_ITEM: 'item', ADD_ROOM_ITEM: 'add_item' };
 
+// TODO.  Refactor this to a higher order component.  withRommItem
 const RoomItem = ({ roomId, roomItemId, left, top, styles, element }) => {
   const [{ isDragging }, drag] = useDrag({
     item: { roomId, roomItemId, left, top, type: ROOM_ITEM_TYPES.ROOM_ITEM },
