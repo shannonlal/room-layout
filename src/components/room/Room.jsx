@@ -22,11 +22,24 @@ const Room = ({ name, id, items, styles, width, height, moveRoomItem, addRoomIte
   });
 
   return (
-    <div ref={drop} sytle={{ ...styles, width, height }}>
-      {' '}
-      hi {name} id {id} items {items.length}{' '}
+    <div ref={drop} style={styles}>
+      {items.map((item, index) => {
+        const { left, top, title } = item;
+        return (
+          <RoomItem
+            roomId={roomId}
+            key={index}
+            roomItemId={index}
+            left={left}
+            top={top}
+            hideSourceOnDrag={hideSourceOnDrag}
+            removeRoomItem={removeRoomItem}
+          >
+            {item.element}
+          </RoomItem>
+        )
+      })}
     </div>
-  );
 };
 
 Room.propTypes = {
