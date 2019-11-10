@@ -6,3 +6,4 @@ package-lock.json
 
 webpack-cache
 .babel-cache
+coverage
