@@ -13,7 +13,7 @@ module.exports = {
     '^react-dnd-test-utils$': 'react-dnd-test-utils/dist/cjs',
   },
   roots: ['./src'],
-  moduleFileExtensions: ['js', 'jsx', 'node'],
+  moduleFileExtensions: ['js', 'jsx', 'node', 'ts'],
   transform: {
     '\\.(js|jsx)$': 'babel-jest',
   },
@@ -26,6 +26,6 @@ module.exports = {
       lines: 80,
     },
   },
-  collectCoverage: true,
+  collectCoverage: false,
   collectCoverageFrom: ['src/**/*.{js,jsx}', '!src/index.js', '!node_modules/**'],
 };
