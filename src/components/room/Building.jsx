@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
-// import update from 'immutability-helper';
+// import { TransformWrapper, TransformComponent } from 'react-zoom-pan-pinch';
+import update from 'immutability-helper';
+
+import Room from './Room';
 
 const Building = () => {
-  console.log('Inside Building');
   const [roomDetails, setRoomDetails] = useState({
     rooms: [
       {
@@ -16,8 +18,7 @@ const Building = () => {
     ],
   });
 
-  /* const moveRoomItem = (roomId, id, left, top) => {
-    console.log(`Moving Room ${roomId} Element ${id} Left ${left} top ${top}`);
+  const moveRoomItem = (roomId, id, left, top) => {
     setRoomDetails(
       update(roomDetails, {
         rooms: {
@@ -34,7 +35,6 @@ const Building = () => {
   };
 
   const addRoomItem = (roomId, left = 0, top = 0) => {
-    console.log(`Adding Item to Room ${roomId} Left ${left} Top ${top}`);
     setRoomDetails(
       update(roomDetails, {
         rooms: {
@@ -48,8 +48,6 @@ const Building = () => {
     );
   };
   const removeRoomItem = (roomId, itemId) => {
-    console.log(`Remove rooom called room ${roomId} id ${itemId}`);
-
     setRoomDetails(
       update(roomDetails, {
         rooms: {
@@ -62,10 +60,25 @@ const Building = () => {
       })
     );
   };
-  */
+
   console.log('Calling Building');
   return (
     <div>
+      {roomDetails.rooms.map((room, index) => {
+        return (
+          <Room
+            // eslint-disable-next-line react/no-array-index-key
+            key={index}
+            id={index}
+            height={300}
+            width={300}
+            items={room.elements}
+            moveRoomItem={moveRoomItem}
+            addRoomItem={addRoomItem}
+            removeRoomItem={removeRoomItem}
+          />
+        );
+      })}
       <div>
         <button type="button">Add Room</button>
       </div>

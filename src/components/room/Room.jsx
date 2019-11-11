@@ -3,7 +3,7 @@ import { useDrop } from 'react-dnd';
 import PropTypes from 'prop-types';
 import RoomItem, { ROOM_ITEM_TYPES } from './RoomItem';
 
-const Room = ({ name, id, items, styles, width, height, moveRoomItem, addRoomItem }) => {
+const Room = ({ id, items, styles, width, height, moveRoomItem, addRoomItem }) => {
   const [, drop] = useDrop({
     accept: [ROOM_ITEM_TYPES.ROOM_ITEM, ROOM_ITEM_TYPES.ADD_ROOM_ITEM],
     // eslint-disable-next-line consistent-return
@@ -21,20 +21,15 @@ const Room = ({ name, id, items, styles, width, height, moveRoomItem, addRoomIte
     },
   });
 
+
+  // roomId, roomItemId, left, top, styles, element
   return (
     <div ref={drop} style={styles}>
       {items.map((item, index) => {
         const { left, top, title } = item;
         return (
-          <RoomItem
-            roomId={roomId}
-            key={index}
-            roomItemId={index}
-            left={left}
-            top={top}
-            hideSourceOnDrag={hideSourceOnDrag}
-            removeRoomItem={removeRoomItem}
-          >
+          // eslint-disable-next-line react/no-array-index-key
+          <RoomItem roomId={id} roomItemId={index} key={index} left={left} top={top} element="Shannon">
             {item.element}
           </RoomItem>
         )
@@ -44,7 +39,6 @@ const Room = ({ name, id, items, styles, width, height, moveRoomItem, addRoomIte
 };
 
 Room.propTypes = {
-  name: PropTypes.string.isRequired,
   id: PropTypes.number.isRequired,
   items: PropTypes.arrayOf(RoomItem).isRequired,
   width: PropTypes.number,
