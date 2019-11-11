@@ -34,7 +34,8 @@ const Building = () => {
     );
   };
 
-  const addRoomItem = (roomId, left = 0, top = 0) => {
+  const addRoomItem = (roomId = 0, left = 0, top = 0) => {
+    console.log(`Adding ${roomId} left ${left} top ${top}`);
     setRoomDetails(
       update(roomDetails, {
         rooms: {
@@ -61,7 +62,10 @@ const Building = () => {
     );
   };
 
-  console.log('Calling Building');
+  const onAddRoomItem = () => {
+    addRoomItem();
+  };
+
   return (
     <div>
       {roomDetails.rooms.map((room, index) => {
@@ -80,7 +84,9 @@ const Building = () => {
         );
       })}
       <div>
-        <button type="button">Add Room</button>
+        <button type="button" onClick={onAddRoomItem}>
+          Add Room
+        </button>
       </div>
     </div>
   );

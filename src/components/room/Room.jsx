@@ -21,18 +21,18 @@ const Room = ({ id, items, styles, width, height, moveRoomItem, addRoomItem }) =
     },
   });
 
-
-  // roomId, roomItemId, left, top, styles, element
+  const style = { ...styles, width, height };
+  console.log( `Room ${id}`, items);
   return (
-    <div ref={drop} style={styles}>
+    <div ref={drop} style={style}>
       {items.map((item, index) => {
-        const { left, top, title } = item;
+        const { left, top } = item;
         return (
           // eslint-disable-next-line react/no-array-index-key
           <RoomItem roomId={id} roomItemId={index} key={index} left={left} top={top} element="Shannon">
-            {item.element}
+            <p>Shannon</p>
           </RoomItem>
-        )
+        );
       })}
     </div>
   );

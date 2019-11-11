@@ -19,7 +19,7 @@ const RoomItem = ({ roomId, roomItemId, left, top, styles, element }) => {
 
   return (
     <div ref={drag} style={{ ...styles, left, top }}>
-      {element}
+      `Room ${roomId} Item ${roomItemId}`
     </div>
   );
 };

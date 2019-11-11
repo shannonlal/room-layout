@@ -4,7 +4,7 @@ import HTML5Backend from 'react-dnd-html5-backend';
 
 import {Building} from 'room-layout';
 
-
+// TODO Move Button Controls into separate component
 function RoomExample() {
   return (
     <div className="App">
