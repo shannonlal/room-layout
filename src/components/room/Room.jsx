@@ -40,6 +40,7 @@ const Room = ({ name, id, items, styles, width, height, moveRoomItem, addRoomIte
         )
       })}
     </div>
+  );
 };
 
 Room.propTypes = {
