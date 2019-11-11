@@ -1,4 +1,5 @@
 const webpack = require('webpack');
+const path = require('path');
 
 module.exports = {
   entry: './src/index.jsx',
@@ -20,6 +21,9 @@ module.exports = {
   },
   resolve: {
     extensions: ['*', '.js', '.jsx'],
+    alias: {
+      react: path.resolve('./node_modules/react'),
+    },
   },
   output: {
     // eslint-disable-next-line no-path-concat
