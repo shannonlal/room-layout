@@ -1,10 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import App from './RoomExample';
+import RoomExample from './RoomExample';
 
-const title = 'Room Layout Example 1';
-
-ReactDOM.render(<App title={title} />, document.getElementById('app'));
+const rootElement = document.getElementById('app');
+ReactDOM.render(<RoomExample />, rootElement);
 
 module.hot.accept();

@@ -1,7 +1,5 @@
-const Building = require('./components/room/Building');
+import Building from './components/room/Building';
 
-export const Room = require('./components/room/Room');
-export const RoomItem = require('./components/room/RoomItem');
-
+console.log( 'Index', Building);
 
 export default Building;

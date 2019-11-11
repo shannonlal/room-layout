@@ -1,9 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-const Building = () => <div> hi</div>;
+export default function Building() {
+  const addRoomItem = (roomId, left = 0, top = 0) => {};
 
-Building.propTypes = {};
-
-Building.defaultProps = {};
-
-export default Building;
+  return (
+    <div>
+      <div>
+        <button type="button" onClick={addRoomItem}>
+          Add Room
+        </button>
+      </div>
+    </div>
+  );
+}
