@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 // import { TransformWrapper, TransformComponent } from 'react-zoom-pan-pinch';
 import update from 'immutability-helper';
 
 import Room from './Room';
 import BuildingControl from './BuildingControl';
 
-const Building = () => {
+const Building = ({ buttons }) => {
   const [roomDetails, setRoomDetails] = useState({
     rooms: [
       {
@@ -88,10 +89,22 @@ const Building = () => {
         <button type="button" onClick={onAddRoomItem}>
           Add Room
         </button>
-        <BuildingControl name="Add Table" />
+        <BuildingControl name="Add Table" buttons={buttons} />
       </div>
     </div>
   );
+};
+
+Building.propTypes = {
+  buttons: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string,
+    })
+  ),
+};
+
+Building.defaultProps = {
+  buttons: [],
 };
 
 export default Building;
