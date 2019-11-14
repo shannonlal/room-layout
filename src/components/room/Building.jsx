@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import update from 'immutability-helper';
 
 import Room from './Room';
-import RoomButtonItem from './RoomButtonItem';
+import BuildingControl from './BuildingControl';
 
 const Building = () => {
   const [roomDetails, setRoomDetails] = useState({
@@ -88,7 +88,7 @@ const Building = () => {
         <button type="button" onClick={onAddRoomItem}>
           Add Room
         </button>
-        <RoomButtonItem name="Add Table" />
+        <BuildingControl name="Add Table" />
       </div>
     </div>
   );
