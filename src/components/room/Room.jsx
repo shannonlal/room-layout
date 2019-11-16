@@ -9,7 +9,8 @@ const Room = ({ id, items, styles, width, height, moveRoomItem, addRoomItem }) =
     accept: Object.keys(ROOM_ITEM_TYPES),
     // eslint-disable-next-line consistent-return
     drop(item, monitor) {
-      if (item.type === ROOM_ITEM_TYPES.ADD_ROOM_ITEM) {
+      console.log( 'Drop has been detected', item);
+      if (item.type === ROOM_ITEM_TYPES.CIRCLE_TABLE_ADD || item.type === ROOM_ITEM_TYPES.RECT_TABLE_ADD) {
         const location = monitor.getClientOffset();
         addRoomItem(id, location.x, location.y);
       } else {

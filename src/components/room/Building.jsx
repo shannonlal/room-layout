@@ -69,21 +69,19 @@ const Building = ({ buttons }) => {
 
   return (
     <div>
-      {roomDetails.rooms.map((room, index) => {
-        return (
-          <Room
-            // eslint-disable-next-line react/no-array-index-key
-            key={index}
-            id={index}
-            height={300}
-            width={300}
-            items={room.elements}
-            moveRoomItem={moveRoomItem}
-            addRoomItem={addRoomItem}
-            removeRoomItem={removeRoomItem}
-          />
-        );
-      })}
+      {roomDetails.rooms.map((room, index) => (
+        <Room
+          // eslint-disable-next-line react/no-array-index-key
+          key={index}
+          id={index}
+          height={300}
+          width={300}
+          items={room.elements}
+          moveRoomItem={moveRoomItem}
+          addRoomItem={addRoomItem}
+          removeRoomItem={removeRoomItem}
+        />
+      ))}
       <div>
         <button type="button" onClick={onAddRoomItem}>
           Add Room
