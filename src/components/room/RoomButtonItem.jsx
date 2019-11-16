@@ -1,12 +1,12 @@
 import React from 'react';
 import { useDrag } from 'react-dnd';
 import PropTypes from 'prop-types';
-import { ROOM_ITEM_TYPES } from './RoomItem';
 
-const RoomButtonItem = ({ name, style }) => {
+const RoomButtonItem = ({ name, style, type }) => {
   const [{ isDragging }, drag] = useDrag({
-    item: { name, type: ROOM_ITEM_TYPES.ADD_ROOM_ITEM },
+    item: { name, type },
     end: (item, monitor) => {
+        console.log( 'End Drag of item ', type);
       monitor.getDropResult();
     },
     collect: (monitor) => ({
@@ -23,18 +23,8 @@ const RoomButtonItem = ({ name, style }) => {
 
 RoomButtonItem.propTypes = {
   name: PropTypes.string.isRequired,
-  style: PropTypes.objectOf(PropTypes.any),
+  style: PropTypes.objectOf(PropTypes.any).isRequired,
+  type: PropTypes.string.isRequired,
 };
 
-RoomButtonItem.defaultProps = {
-  style: {
-    border: '1px dashed gray',
-    backgroundColor: 'white',
-    padding: '0.5rem 1rem',
-    marginRight: '1.5rem',
-    marginBottom: '1.5rem',
-    cursor: 'move',
-    float: 'left',
-  },
-};
 export default RoomButtonItem;

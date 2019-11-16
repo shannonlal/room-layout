@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import RoomButtonItem from './RoomButtonItem';
 
 const BuildingControl = ({ zoomEnabled, zoomIn, zoomOut, resetTransform, style, buttons }) => {
+  // eslint-disable-next-line consistent-return
   const getZoomControl = () => {
     if (zoomEnabled) {
       return (
@@ -25,8 +26,9 @@ const BuildingControl = ({ zoomEnabled, zoomIn, zoomOut, resetTransform, style, 
     if (buttons && buttons.length > 0) {
       return (
         <div>
-          {buttons.map((button) => {
-            return <RoomButtonItem name={button.name} />;
+          {buttons.map((button, index) => {
+            const key = `${button.name}-${index}`;
+            return <RoomButtonItem key={key} {...button} />;
           })}
         </div>
       );
@@ -50,6 +52,8 @@ BuildingControl.propTypes = {
   buttons: PropTypes.arrayOf(
     PropTypes.shape({
       name: PropTypes.string,
+      type: PropTypes.string,
+      style: PropTypes.objectOf(PropTypes.any),
     })
   ),
 };

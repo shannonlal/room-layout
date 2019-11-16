@@ -1,11 +1,12 @@
 import React from 'react';
 import { useDrop } from 'react-dnd';
 import PropTypes from 'prop-types';
-import RoomItem, { ROOM_ITEM_TYPES } from './RoomItem';
+import RoomItem from './RoomItem';
+import ROOM_ITEM_TYPES from '../common/room_types';
 
 const Room = ({ id, items, styles, width, height, moveRoomItem, addRoomItem }) => {
   const [, drop] = useDrop({
-    accept: [ROOM_ITEM_TYPES.ROOM_ITEM, ROOM_ITEM_TYPES.ADD_ROOM_ITEM],
+    accept: Object.keys(ROOM_ITEM_TYPES),
     // eslint-disable-next-line consistent-return
     drop(item, monitor) {
       if (item.type === ROOM_ITEM_TYPES.ADD_ROOM_ITEM) {

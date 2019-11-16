@@ -36,14 +36,13 @@ const Building = ({ buttons }) => {
     );
   };
 
-  const addRoomItem = (roomId = 0, left = 0, top = 0) => {
-    console.log(`Adding ${roomId} left ${left} top ${top}`);
+  const addRoomItem = (roomId = 0, left = 0, top = 0, type) => {
     setRoomDetails(
       update(roomDetails, {
         rooms: {
           [roomId]: {
             elements: {
-              $push: [{ left, top, title: 'New Room' }],
+              $push: [{ left, top, title: 'New Room', type }],
             },
           },
         },
@@ -89,7 +88,7 @@ const Building = ({ buttons }) => {
         <button type="button" onClick={onAddRoomItem}>
           Add Room
         </button>
-        <BuildingControl name="Add Table" buttons={buttons} />
+        <BuildingControl name="Add Table" buttons={buttons} addRoomItem={addRoomItem} />
       </div>
     </div>
   );

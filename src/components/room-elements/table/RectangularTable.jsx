@@ -7,6 +7,16 @@ const RectangularTable = ({ left, top, width, height, styles }) => (
   </div>
 );
 
+export const RectangularTableButtonStyle = {
+  border: '1px dashed gray',
+  backgroundColor: 'white',
+  padding: '0.5rem 1rem',
+  marginRight: '1.5rem',
+  marginBottom: '1.5rem',
+  cursor: 'move',
+  float: 'left',
+};
+
 RectangularTable.propTypes = {
   left: PropTypes.number,
   top: PropTypes.number,
